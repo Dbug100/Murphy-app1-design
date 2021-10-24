@@ -1,11 +1,14 @@
 package baseline;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+
 
 public class FXMLController implements Initializable {
 
@@ -14,8 +17,19 @@ public class FXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
+        selectDate.setValue(LocalDate.now());
+    }
+    @FXML
+    Button addButton;
+    @FXML
+    TextField addDescription;
+    @FXML
+    DatePicker selectDate;
+    @FXML
+    ListView<EventList> toDoList;
+
+    @FXML
+    private void addEvent(Event e){
+
     }
 }
