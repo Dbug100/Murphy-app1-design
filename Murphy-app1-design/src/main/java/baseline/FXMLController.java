@@ -1,5 +1,8 @@
 package baseline;
-
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Deaja Murphy
+ */
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -14,13 +17,10 @@ public class FXMLController implements Initializable {
 
     @FXML
     private Label label;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        selectDate.setValue(LocalDate.now());
-    }
     @FXML
     Button addButton;
+    @FXML
+    Button deleteButton;
     @FXML
     TextField addDescription;
     @FXML
@@ -28,8 +28,31 @@ public class FXMLController implements Initializable {
     @FXML
     ListView<EventList> toDoList;
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        //event searializer to prevent duplicates
+
+    }
+
+
     @FXML
     private void addEvent(Event e){
+        var newEvent = new EventList(selectDate.getValue(), addDescription.getText());
+        //add new event to toDoList
 
+        //empty text field and set calendar to today's date
+        // selectDate.setValue(LocalDate.now());
+    }
+    @FXML
+    private void deleteEvent(Event e){
+        //for length of current list
+        //search for event
+        //splice
+
+    }
+    @FXML
+    public Object[] getEvent(){
+        // return toDoList
+        return toDoList.getItems().toArray();
     }
 }

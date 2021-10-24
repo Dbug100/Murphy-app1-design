@@ -1,28 +1,38 @@
 package baseline;
-
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Deaja Murphy
+ */
 import java.time.LocalDate;
 
 public class EventList {
     private String description;
     private LocalDate date;
+    //string pattern for date picker
+    //date time formatter
 
-    public String getDescription() {
-        return description;
-    }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
     public void setDate(LocalDate date) {
         this.date = date;
     }
-    public void toDoList(LocalDate date, String description){
+    public EventList(LocalDate date, String description){
         this.setDate(date);
         this.setDescription(description);
+    }
+
+    public LocalDate getDate(){
+        return date;
+    }
+    public String getDescription(){
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        return "At: " + date + description;
     }
 }
